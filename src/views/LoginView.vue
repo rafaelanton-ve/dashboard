@@ -88,9 +88,11 @@ async function handleLogin() {
 </template>
 
 <style scoped>
+
 .login-page {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: #f5f5f5;
