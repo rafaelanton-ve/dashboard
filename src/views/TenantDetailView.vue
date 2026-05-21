@@ -48,7 +48,16 @@ onMounted(async () => {
   const tenant = await tenantsStore.fetchTenantById(route.params.id)
   if (tenant) {
     formData.value = {
-      ...tenant,
+      company_name: tenant.company_name || '',
+      email: tenant.email || '',
+      description: tenant.description || '',
+      primary_color: tenant.primary_color || '#000000',
+      secondary_color: tenant.secondary_color || '#ffffff',
+      accent_color: tenant.accent_color || '#3b82f6',
+      border_radius: tenant.border_radius ?? 16,
+      position: tenant.position || 'bottom-right',
+      logo: tenant.logo || '',
+      active: tenant.is_active ?? true,
       social_links: tenant.social_links || [],
       secondary_links: tenant.secondary_links || []
     }

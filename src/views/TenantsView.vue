@@ -103,8 +103,8 @@ function viewTenant(id) {
               </code>
             </td>
             <td>
-              <span class="badge" :class="tenant.active ? 'badge-success' : 'badge-warning'">
-                {{ tenant.active ? 'Activo' : 'Inactivo' }}
+              <span class="badge" :class="tenant.is_active ? 'badge-success' : 'badge-warning'">
+                {{ tenant.is_active ? 'Activo' : 'Inactivo' }}
               </span>
             </td>
             <td>{{ new Date(tenant.created_at).toLocaleDateString('es-ES') }}</td>

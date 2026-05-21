@@ -19,13 +19,13 @@ const stats = computed(() => [
   },
   {
     label: 'Activos',
-    value: tenantsStore.tenants.filter(t => t.active).length,
+    value: tenantsStore.tenants.filter(t => t.is_active).length,
     icon: 'check',
     color: '#10b981'
   },
   {
     label: 'Inactivos',
-    value: tenantsStore.tenants.filter(t => !t.active).length,
+    value: tenantsStore.tenants.filter(t => !t.is_active).length,
     icon: 'pause',
     color: '#f59e0b'
   }
@@ -91,8 +91,8 @@ const icons = {
                 <code>{{ tenant.id.slice(0, 8) }}...</code>
               </td>
               <td>
-                <span class="badge" :class="tenant.active ? 'badge-success' : 'badge-warning'">
-                  {{ tenant.active ? 'Activo' : 'Inactivo' }}
+                <span class="badge" :class="tenant.is_active ? 'badge-success' : 'badge-warning'">
+                  {{ tenant.is_active ? 'Activo' : 'Inactivo' }}
                 </span>
               </td>
               <td>{{ new Date(tenant.created_at).toLocaleDateString('es-ES') }}</td>
