@@ -97,6 +97,7 @@ async function handleLogin() {
   justify-content: center;
   background: #f5f5f5;
   padding: 20px;
+  gap: 10%;
 }
 
 .login-container {
