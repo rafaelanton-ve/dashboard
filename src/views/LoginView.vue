@@ -74,6 +74,16 @@ async function handleLogin() {
         </form>
       </div>
     </div>
+    <div class="card">
+      <h2>Instalación</h2>
+      <p>Agrega el siguiente script a tu sitio web:</p>
+      <div class="code-block">
+        <span class="tag">&lt;script</span>
+        <span class="attr"> src</span>=<span class="value">"https://widget-three-rouge.vercel.app/widget.js"</span>
+        <span class="attr"> data-tenant</span>=<span class="value">"tu-tenant-id"</span><span
+          class="tag">&gt;&lt;/script&gt;</span>
+      </div>
+    </div>
   </div>
 </template>
 
