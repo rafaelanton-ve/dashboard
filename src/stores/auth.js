@@ -152,12 +152,11 @@ export const useAuthStore = defineStore('auth', () => {
 
   async function addAdmin(email, name, role = 'admin') {
     const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
-    const FUNCTION_URL = `${SUPABASE_URL}/functions/v1/add-admin`
 
     const { data: { session } } = await supabase.auth.getSession()
     if (!session) throw new Error('No autenticado')
 
-    const response = await fetch(FUNCTION_URL, {
+    const response = await fetch(`${SUPABASE_URL}/functions/v1/create-admin`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -166,12 +165,13 @@ export const useAuthStore = defineStore('auth', () => {
       body: JSON.stringify({ email, name, role })
     })
 
+    const data = await response.json()
+
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}))
-      throw new Error(errorData.error || 'Error al crear el administrador')
+      throw new Error(data.error || 'Error al crear el administrador')
     }
 
-    return response.json()
+    return data
   }
 
   async function updateAdminStatus(adminId, isActive) {
