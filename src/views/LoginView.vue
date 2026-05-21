@@ -144,4 +144,43 @@ async function handleLogin() {
   color: #991b1b;
   font-size: 14px;
 }
+
+/* Código de instalación */
+.card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .code-block {
+      background: #1a1a2e;
+      color: #a0a0b0;
+      padding: 20px;
+      border-radius: 12px;
+      overflow-x: auto;
+      font-family: 'Fira Code', monospace;
+      font-size: 14px;
+    }
+
+    .code-block .tag {
+      color: #ff7b72;
+    }
+
+    .code-block .attr {
+      color: #79c0ff;
+    }
+
+    .code-block .value {
+      color: #a5d6ff;
+    }
+
+    .note {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 20px;
+    }
 </style>
